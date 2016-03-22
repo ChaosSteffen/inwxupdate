@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'inwx/Domrobot'
+require 'inwx/domrobot'
 require 'yaml'
 
 config = YAML.load(open('config.yml'))
