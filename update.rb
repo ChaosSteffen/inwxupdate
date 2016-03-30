@@ -16,14 +16,12 @@ puts YAML.dump(result) if CONFIG[:debug]
 raw = `ifconfig #{CONFIG[:network_interface]} inet6 | grep inet6 | grep -v fe80 | grep -v deprecated`
 v6ip = raw.lstrip.split(' ')[1]
 
-raise 'no v6 ip detected' unless v6ip
+raise 'no v6 ip detected' unless !!v6ip
 
 dns_entries = Array.new() << CONFIG[:inwx_dns_entries]
 dns_entries.flatten!
 
 dns_entries.each do |dns_entry|
-  puts dns_entries.inspect
-  puts v6ip.inspect
   result = domrobot.call('nameserver', 'updateRecord', { id: dns_entry, content: v6ip })
   puts YAML.dump(result) if CONFIG[:debug]
 end
