@@ -2,4 +2,4 @@
 .ruby-gemset
 .ruby-version
 *.tmp
-config.yml
+config.rb

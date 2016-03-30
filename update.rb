@@ -2,22 +2,28 @@
 
 require 'inwx/domrobot'
 require 'yaml'
-
-config = YAML.load(open('config.yml'))
+require './config.rb'
 
 addr = 'api.domrobot.com'
-user = config['inwx_user']
-pass = config['inwx_pass']
+user = CONFIG[:inwx_user]
+pass = CONFIG[:inwx_pass]
 
 domrobot = INWX::Domrobot.new(addr)
 
 result = domrobot.login(user, pass)
-puts YAML.dump(result) if config['debug']
+puts YAML.dump(result) if CONFIG[:debug]
 
-raw = `ifconfig #{config['network_interface']} inet6 | grep inet6 | grep -v fe80 | grep -v deprecated`
+raw = `ifconfig #{CONFIG[:network_interface]} inet6 | grep inet6 | grep -v fe80 | grep -v deprecated`
 v6ip = raw.lstrip.split(' ')[1]
 
-params = { id: config['inwx_dns_entry'], content: v6ip }
+raise 'no v6 ip detected' unless v6ip
 
-result = domrobot.call('nameserver', 'updateRecord', params)
-puts YAML.dump(result) if config['debug']
+dns_entries = Array.new() << CONFIG[:inwx_dns_entries]
+dns_entries.flatten!
+
+dns_entries.each do |dns_entry|
+  puts dns_entries.inspect
+  puts v6ip.inspect
+  result = domrobot.call('nameserver', 'updateRecord', { id: dns_entry, content: v6ip })
+  puts YAML.dump(result) if CONFIG[:debug]
+end

@@ -1,5 +1,0 @@
-inwx_user: your_username
-inwx_pass: your_password
-inwx_dns_entry: 123456789
-network_interface: en0
-debug: false
