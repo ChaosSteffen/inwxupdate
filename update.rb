@@ -23,8 +23,8 @@ JOBS.each do |job|
     end
 
     if matching_record
-      # ip = get_ip(job[:network_interface])
-      # Nameserver.updateRecord(id: matching_record['id'], content: ip)
+      ip = get_ip(job[:network_interface])
+      Nameserver.updateRecord(id: matching_record['id'], content: ip)
     end
   end
 end
