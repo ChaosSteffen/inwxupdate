@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class APIObject
   def self.method_missing(method_name, options=nil)
     result = if options

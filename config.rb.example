@@ -1,7 +1,14 @@
 CONFIG = {
   inwx_user: "your_username",
   inwx_pass: "your_password",
-  inwx_dns_entries: [123456789]
-  network_interface: "en0",
+  jobs: [
+    {
+      records: [
+        name: 'www.example.org',
+        type: 'AAAA'
+      ],
+      network_interface: "en0"
+    }
+  ],
   debug: false
 }
