@@ -3,8 +3,8 @@
 require 'inwx/domrobot'
 require 'yaml'
 require './config.rb'
-require './wrapper.rb' # Api wrapper for more convient calls
-require './get_ip.rb'
+require './lib/wrapper.rb' # Api wrapper for more convient calls
+require './lib/get_ip.rb'
 
 IP = get_ip()
 DOMBOT = INWX::Domrobot.new('api.domrobot.com')
