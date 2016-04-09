@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require './config.rb'
+require_relative 'config.rb'
 
-require './lib/inwx.rb'
-require './lib/get_ip.rb'
+require_relative 'lib/inwx.rb'
+require_relative 'lib/get_ip.rb'
 
 Account.login(user: CONFIG[:inwx_user], pass: CONFIG[:inwx_pass], lang: 'en')
 
