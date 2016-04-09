@@ -1,13 +1,16 @@
+# frozen_string_literal: true
+
 CONFIG = {
-  inwx_user: "your_username",
-  inwx_pass: "your_password",
+  inwx_api: 'api.domrobot.com',
+  inwx_user: 'your_username',
+  inwx_pass: 'your_password',
   jobs: [
     {
       records: [
         name: 'www.example.org',
         type: 'AAAA'
       ],
-      network_interface: "en0"
+      network_interface: 'en0'
     }
   ],
   debug: false
