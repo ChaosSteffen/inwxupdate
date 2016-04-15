@@ -9,7 +9,11 @@ CONFIG = {
       records: [
         { name: 'www.example.org', type: 'AAAA' }
       ],
-      network_interface: 'en0'
+      detector: {
+        type: 'ifconfig',
+        version: 6,
+        network_interface: 'en0'
+      }
     }
   ],
   debug: false

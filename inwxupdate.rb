@@ -3,7 +3,8 @@
 require_relative 'config.rb'
 
 require_relative 'lib/inwx.rb'
-require_relative 'lib/get_ip.rb'
+require_relative 'lib/detectors/detector.rb'
+require_relative 'lib/detectors/ifconfig.rb'
 
 Account.login(user: CONFIG[:inwx_user], pass: CONFIG[:inwx_pass], lang: 'en')
 
@@ -22,9 +23,10 @@ JOBS.each do |job|
       record['name'] == record_to_update[:name] && record['type'] == record_to_update[:type]
     end
 
-    if matching_record
-      ip = get_ip(job[:network_interface])
-      Nameserver.updateRecord(id: matching_record['id'], content: ip)
-    end
+    next unless matching_record
+
+    detector = Detector.setup(job[:detector])
+    ip = detector.detect
+    Nameserver.updateRecord(id: matching_record['id'], content: ip)
   end
 end
