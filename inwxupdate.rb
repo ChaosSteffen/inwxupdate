@@ -5,6 +5,7 @@ require_relative 'config.rb'
 require_relative 'lib/inwx.rb'
 require_relative 'lib/detectors/detector.rb'
 require_relative 'lib/detectors/ifconfig.rb'
+require_relative 'lib/detectors/ipify.rb'
 
 Account.login(user: CONFIG[:inwx_user], pass: CONFIG[:inwx_pass], lang: 'en')
 

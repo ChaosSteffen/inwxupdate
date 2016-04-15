@@ -5,7 +5,7 @@ class Detector
     end
 
     if paramters[:type] == 'ipify'
-
+      return Ipify.new(paramters[:network_interface], paramters[:version])
     end
   end
 end
