@@ -10,3 +10,12 @@ vi config.rb
 ruby inwxupdate.rb
 ```
 **Bonus level:** Setup a cron-job who does it regularly.
+
+```
+# Example Crontab
+SHELL=/usr/local/bin/zsh
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin
+# Order of crontab fields
+# minute        hour    mday    month   wday    command
+*/5             *       *       *       *       /usr/local/bin/ruby /home/username/inwxupdate/inwxupdate.rb > /home/username/inwxupdate.hasrun
+```
