@@ -1,6 +1,8 @@
 # inwxupdate
 Updates your [inwx](https://www.inwx.com)-DNS records with the local IPv6 address.
 
+Blog Post: [http://schröder.xyz/Updating-your-dns-settings-with-inwxupdate-rb.html](http://schröder.xyz/Updating-your-dns-settings-with-inwxupdate-rb.html)
+
 ## How to use it
 ```
 git clone https://github.com/ChaosSteffen/inwxupdate.git
