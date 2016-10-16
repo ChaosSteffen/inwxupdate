@@ -1,11 +1,8 @@
-# frozen_string_literal: true
+#!/usr/bin/env ruby
 
-require_relative 'config.rb'
+require 'inwxupdate'
 
-require_relative 'lib/inwx.rb'
-require_relative 'lib/detectors/detector.rb'
-require_relative 'lib/detectors/ifconfig.rb'
-require_relative 'lib/detectors/ipify.rb'
+find_config!
 
 Account.login(user: CONFIG[:inwx_user], pass: CONFIG[:inwx_pass], lang: 'en')
 
