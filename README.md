@@ -10,10 +10,10 @@ gem install inwxupdate
 Create a config file (see this repo for example) and place it in one of the following places:
 
 ```
-/etc/inwxupdate.config.rb'
-/usr/local/etc/inwxupdate.config.rb'
-~/inwxupdate.config.rb'
-./inwxupdate.config.rb'
+/etc/inwxupdate.config.rb
+/usr/local/etc/inwxupdate.config.rb
+~/inwxupdate.config.rb
+./inwxupdate.config.rb
 ```
 
 Then run:
