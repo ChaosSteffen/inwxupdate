@@ -1,23 +1,34 @@
 # inwxupdate
-Updates your [inwx](https://www.inwx.com)-DNS records with the local IPv6 address.
-
-Blog Post: [http://schröder.xyz/Updating-your-dns-settings-with-inwxupdate-rb.html](http://schröder.xyz/Updating-your-dns-settings-with-inwxupdate-rb.html)
+Updates your [inwx](https://www.inwx.com)-DNS records with the local IPv6 (or IPv4) address.
 
 ## How to use it
+
 ```
-git clone https://github.com/ChaosSteffen/inwxupdate.git
-cd inwxupdate
-cp config.rb.example config.rb
-vi config.rb
-ruby inwxupdate.rb
+gem install inwxupdate
 ```
+
+Create a config file (see this repo for example) and place it in one of the following places:
+
+```
+/etc/inwxupdate.config.rb'
+/usr/local/etc/inwxupdate.config.rb'
+~/inwxupdate.config.rb'
+./inwxupdate.config.rb'
+```
+
+Then run:
+
+```
+inwxupdate
+```
+
 **Bonus level:** Setup a cron-job who does it regularly.
 
 ```
 # Example Crontab
-SHELL=/usr/local/bin/zsh
+SHELL=/bin/sh
 PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin
 # Order of crontab fields
 # minute        hour    mday    month   wday    command
-*/5             *       *       *       *       /usr/local/bin/ruby /home/username/inwxupdate/inwxupdate.rb > /home/username/inwxupdate.hasrun
+*/5             *       *       *       *       inwxupdate > ~/inwxupdate.hasrun
 ```
