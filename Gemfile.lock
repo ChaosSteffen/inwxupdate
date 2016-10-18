@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    inwxupdate (0.3.0)
+      simpleidn (~> 0.0.7)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    simpleidn (0.0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  inwxupdate!
+
+RUBY VERSION
+   ruby 2.2.5p319
+
+BUNDLED WITH
+   1.13.3

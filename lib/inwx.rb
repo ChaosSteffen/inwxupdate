@@ -10,7 +10,9 @@ class INWX
 
   def initialize
     # Create a new client instance
-    @client = XMLRPC::Client.new(CONFIG[:inwx_api], '/xmlrpc/', '443', nil, nil, nil, nil, true, 100)
+    @client = XMLRPC::Client.new(
+      CONFIG[:inwx_api], '/xmlrpc/', '443', nil, nil, nil, nil, true, 100
+    )
   end
 
   def call(object, method, params = {})

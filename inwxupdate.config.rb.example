@@ -17,4 +17,4 @@ CONFIG = {
     }
   ],
   debug: false
-}
+}.freeze

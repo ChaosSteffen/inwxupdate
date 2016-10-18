@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'inwxupdate'
-  s.version     = '0.2.0'
+  s.version     = '0.3.0'
   s.executables << 'inwxupdate'
   s.date        = '2016-10-16'
   s.summary     = 'inwxupdate'
@@ -16,4 +16,6 @@ Gem::Specification.new do |s|
   ]
   s.homepage    = 'https://github.com/ChaosSteffen/inwxupdate'
   s.license     = 'BSD'
+
+  s.add_dependency 'simpleidn', '~> 0.0.7'
 end
