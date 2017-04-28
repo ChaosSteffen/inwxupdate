@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'inwxupdate'
-  s.version     = '0.3.0'
+  s.version     = '0.4.0.pre'
   s.executables << 'inwxupdate'
   s.date        = '2016-10-16'
   s.summary     = 'inwxupdate'
@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
     'lib/detectors/detector.rb',
     'lib/detectors/ifconfig.rb',
     'lib/detectors/ipify.rb',
+    'lib/detectors/ruby.rb',
     'lib/inwx.rb',
     'lib/inwxupdate.rb'
   ]

@@ -1,22 +1,36 @@
 PATH
   remote: .
   specs:
-    inwxupdate (0.3.0)
+    inwxupdate (0.4.0.pre)
       simpleidn (~> 0.0.7)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.3.0)
+    parser (2.3.3.1)
+      ast (~> 2.2)
+    powerpack (0.1.1)
+    rainbow (2.1.0)
+    rubocop (0.46.0)
+      parser (>= 2.3.1.1, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.8.1)
     simpleidn (0.0.7)
+    unicode-display_width (1.1.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   inwxupdate!
+  rubocop
 
 RUBY VERSION
    ruby 2.2.5p319
 
 BUNDLED WITH
-   1.13.3
+   1.13.7

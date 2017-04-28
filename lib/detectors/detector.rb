@@ -7,5 +7,9 @@ module Detector
     if paramters[:type] == 'ipify'
       return Ipify.new(paramters[:network_interface], paramters[:version])
     end
+
+    if paramters[:type] == 'ruby'
+      return Ruby.new(paramters[:network_interface], paramters[:version])
+    end
   end
 end
