@@ -9,7 +9,7 @@ module Detector
     end
 
     if paramters[:type] == 'ruby'
-      return Ruby.new(paramters[:network_interface], paramters[:version])
+      return Ruby.new(paramters[:version])
     end
   end
 end

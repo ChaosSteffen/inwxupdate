@@ -3,8 +3,7 @@ require 'socket'
 
 # Detects your current IP via Ruby Sockets
 class Ruby
-  def initialize(network_interface, version)
-    @network_interface = network_interface
+  def initialize(version)
     @version = version == 6 ? 6 : 4
   end
 
