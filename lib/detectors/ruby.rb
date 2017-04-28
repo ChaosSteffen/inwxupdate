@@ -9,7 +9,7 @@ class Ruby
 
   def detect
     ip_addresses =
-      if version == 6
+      if @version == 6
         Socket.ip_address_list.select(&:ipv6?).reject(&:ipv6_loopback?)
       else
         Socket.ip_address_list.select(&:ipv4?).reject(&:ipv4_loopback?)
