@@ -4,6 +4,7 @@ require_relative 'inwx.rb'
 require_relative 'detectors/detector.rb'
 require_relative 'detectors/ifconfig.rb'
 require_relative 'detectors/ipify.rb'
+require_relative 'detectors/ruby.rb'
 
 require 'simpleidn'
 
