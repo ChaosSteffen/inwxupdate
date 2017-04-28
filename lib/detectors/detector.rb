@@ -1,7 +1,10 @@
 # Wraps around different detector implementations
 module Detector
   def self.setup(params)
-    ifconfig(params) || ipify(params) || ruby_sockets(params)
+    ifconfig(params) ||
+      ipify(params) ||
+      ruby_sockets(params) ||
+      timestamp(params)
   end
 
   def self.ifconfig(params)
@@ -17,5 +20,9 @@ module Detector
 
   def self.ruby_sockets(params)
     Ruby.new(params[:version]) if params[:type] == 'ruby'
+  end
+
+  def self.timestamp(params)
+    Timestamp.new if params[:type] == 'timestamp'
   end
 end

@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
     'lib/detectors/ifconfig.rb',
     'lib/detectors/ipify.rb',
     'lib/detectors/ruby.rb',
+    'lib/detectors/timestamp.rb',
     'lib/inwx.rb',
     'lib/inwxupdate.rb'
   ]
