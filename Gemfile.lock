@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    inwxupdate (0.4.0.pre)
+    inwxupdate (0.4.0)
       simpleidn (~> 0.0.7)
 
 GEM
