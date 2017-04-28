@@ -8,6 +8,7 @@ require_relative 'detectors/ruby.rb'
 
 require 'simpleidn'
 
+# Update inwx DNS records
 class Inwxupdate
   def run
     find_config!

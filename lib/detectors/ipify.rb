@@ -10,7 +10,15 @@ class Ipify
   end
 
   def detect
-    ip = `curl -#{@version} --interface #{@network_interface} 'https://api.ipify.org?format=text' -s`
+    command = [
+      'curl',
+      "-#{@version}",
+      "--interface #{@network_interface}",
+      "'https://api.ipify.org?format=text'",
+      '-s'
+    ].join(' ')
+
+    ip = `#{command}`
 
     raise 'no ip detected' unless ip
 

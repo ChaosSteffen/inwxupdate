@@ -22,6 +22,7 @@ end
 
 # Implements the convienience
 class APIObject
+  # rubocop:disable Style/MethodMissing
   def self.method_missing(*args)
     args = [name.downcase] + args
 
@@ -31,6 +32,7 @@ class APIObject
 
     result['resData']
   end
+  # rubocop:enable Style/MethodMissing
 end
 
 class Account < APIObject; end
