@@ -5,6 +5,6 @@ class Timestamp
   def initialize; end
 
   def detect
-    Time.now
+    Time.now.to_s
   end
 end
