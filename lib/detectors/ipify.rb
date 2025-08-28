@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-# Detects your current IP via `ifconfig`
+# Detects your current IP via ipify.org API
 class Ipify
   def initialize(network_interface, version)
     @network_interface = network_interface
     @version = version == 6 ? 6 : 4
-
-    raise 'Ipify supports only IPv4 yet' if version == 6
   end
 
   def detect
+    api_url = @version == 6 ? 'https://api6.ipify.org?format=text' : 'https://api.ipify.org?format=text'
+    
     command = [
       'curl',
       "-#{@version}",
       "--interface #{@network_interface}",
-      "'https://api.ipify.org?format=text'",
+      "'#{api_url}'",
       '-s'
     ].join(' ')
 
