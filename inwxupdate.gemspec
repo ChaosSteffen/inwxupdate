@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
   s.license     = 'BSD'
 
   s.add_dependency 'simpleidn', '~> 0.2.0'
+  s.add_dependency 'inwx-domrobot', '~> 3.1'
 end

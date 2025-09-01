@@ -38,11 +38,7 @@ class Inwxupdate
   end
 
   def login
-    Account.login(
-      user: CONFIG[:inwx_user],
-      pass: CONFIG[:inwx_pass],
-      lang: 'en'
-    )
+    InwxClient.instance.login(CONFIG[:inwx_user], CONFIG[:inwx_pass])
   end
 
   def process_job(job)

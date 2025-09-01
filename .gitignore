@@ -2,3 +2,9 @@
 .ruby-gemset
 .ruby-version
 *.gem
+
+# Ignore gem installations
+vendor/
+
+# Ignore bundler config
+.bundle/
