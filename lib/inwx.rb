@@ -16,7 +16,18 @@ class INWX
   end
 
   def call(object, method, params = {})
+    login
+
     @client.call("#{object}.#{method}", params)
+  end
+
+  def login
+    @login ||=
+      Account.login(
+        user: CONFIG[:inwx_user],
+        pass: CONFIG[:inwx_pass],
+        lang: 'en'
+      )
   end
 end
 
